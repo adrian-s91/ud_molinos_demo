@@ -1,0 +1,774 @@
+
+/* ==================================
+   UD LOS MOLINOS ZGZ
+   ESTILOS GENERALES
+================================== */
+
+:root {
+    --azul: #102b4e;
+    --azul-claro: #1d426b;
+    --amarillo: #f5c400;
+    --fondo: #f5c400;
+    --blanco: #ffffff;
+    --texto: #273449;
+    --gris: #707b89;
+    --gris-claro: #e5e9ee;
+    --ancho: 1120px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--texto);
+    background: var(--blanco);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* ==================================
+   CABECERA Y NAVEGACIÓN
+================================== */
+
+.cabecera {
+    min-height: 88px;
+    padding: 12px max(5%, calc((100% - var(--ancho)) / 2));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    background: var(--blanco);
+    border-bottom: 1px solid var(--gris-claro);
+    position: relative;
+    z-index: 10;
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--azul);
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+}
+
+.marca img {
+    width: 76px;
+    height: 64px;
+    object-fit: contain;
+}
+
+.marca small {
+    display: block;
+    color: var(--gris);
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.navegacion {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.navegacion a {
+    font-size: 14px;
+    color: var(--gris);
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.navegacion a:hover,
+.navegacion a.activo {
+    color: var(--azul);
+}
+
+.navegacion a.activo {
+    border-bottom: 2px solid var(--azul);
+    padding-bottom: 6px;
+}
+
+.menu-toggle {
+    display: none;
+    border: 0;
+    background: transparent;
+    color: var(--azul);
+    font-size: 27px;
+    cursor: pointer;
+}
+
+/* ==================================
+   PORTADA
+================================== */
+
+.hero {
+    background: var(--fondo);
+    padding: 85px max(7%, calc((100% - var(--ancho)) / 2));
+    min-height: 470px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-contenido {
+    max-width: 650px;
+}
+
+.etiqueta {
+    color: var(--gris);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0 12px;
+}
+
+.hero h1 {
+    color: var(--azul);
+    font-size: clamp(38px, 5vw, 64px);
+    line-height: 1.08;
+    letter-spacing: -2px;
+    margin: 0 0 24px;
+}
+
+.hero h1 span {
+    color: var(--azul-claro);
+}
+
+.hero-contenido > p:not(.etiqueta) {
+    max-width: 570px;
+    color: var(--gris);
+    font-size: 17px;
+}
+
+.hero-decoracion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 230px;
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background: var(--blanco);
+    border: 1px solid var(--gris-claro);
+}
+
+.hero-decoracion img {
+    width: 175px;
+    height: 175px;
+    object-fit: contain;
+}
+
+.hero-botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+/* BOTONES GENERALES */
+
+.boton {
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 5px;
+    background: var(--azul);
+    color: var(--blanco);
+    font-size: 14px;
+    font-weight: 700;
+    border: 1px solid var(--azul);
+    transition: background 0.2s, color 0.2s;
+}
+
+.boton:hover {
+    background: var(--azul-claro);
+}
+
+.boton-secundario {
+    color: var(--azul);
+    background: transparent;
+}
+
+.boton-secundario:hover {
+    color: var(--blanco);
+}
+
+/* ==================================
+   SECCIONES GENERALES
+================================== */
+
+.seccion {
+    max-width: var(--ancho);
+    margin: 0 auto;
+    padding: 75px 25px;
+}
+
+.contenido-limitado {
+    max-width: 1000px;
+}
+
+.encabezado-seccion {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.encabezado-seccion h2,
+.contacto-panel h2 {
+    color: var(--azul);
+    font-size: clamp(26px, 3vw, 36px);
+    line-height: 1.2;
+    margin: 0 0 12px;
+}
+
+.encabezado-seccion > p:not(.etiqueta) {
+    color: var(--gris);
+    margin: 0;
+}
+
+.alineado-izquierda {
+    text-align: left;
+}
+
+.rejilla {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.tarjeta {
+    display: block;
+    background: var(--amarillo);
+    border: 1px solid var(--azul);
+    border-radius: 60px;
+    padding: 27px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+a.tarjeta:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(16, 43, 78, 0.08);
+}
+
+.tarjeta-icono {
+    color: #102b4e;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.tarjeta h3 {
+    color: var(--azul);
+    font-size: 21px;
+    margin: 17px 0 8px;
+}
+
+.tarjeta p {
+    color: var(--gris);
+    font-size: 14px;
+}
+
+.enlace-texto {
+    display: inline-block;
+    color: var(--azul);
+    font-size: 13px;
+    font-weight: 800;
+    margin-top: 8px;
+}
+
+/* ==================================
+   CABECERAS DE PÁGINAS INTERIORES
+================================== */
+
+.cabecera-pagina {
+    text-align: center;
+    padding: 65px 20px;
+    background: var(--fondo);
+    border-bottom: 1px solid var(--gris-claro);
+}
+
+.cabecera-pagina h1 {
+    color: var(--azul);
+    font-size: clamp(34px, 5vw, 48px);
+    line-height: 1.15;
+    margin: 0 0 14px;
+    letter-spacing: -1px;
+}
+
+.cabecera-pagina > p:last-child {
+    color: var(--gris);
+    margin: 0;
+}
+
+/* ==================================
+   PALMARÉS
+================================== */
+
+.trofeos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.trofeo {
+    padding: 32px 24px;
+    text-align: center;
+    border: 1px solid var(--gris-claro);
+    border-radius: 8px;
+    background: var(--blanco);
+}
+
+.silueta-trofeo {
+    width: 85px;
+    height: 95px;
+    margin-bottom: 10px;
+    fill: #b9c0c9;
+}
+
+.trofeo-categoria {
+    color: var(--gris);
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 800;
+    margin: 8px 0;
+}
+
+.trofeo h3 {
+    color: var(--azul);
+    font-size: 20px;
+    margin: 8px 0;
+}
+
+.trofeo > p:last-child {
+    color: var(--gris);
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+/* ==================================
+   RESULTADOS Y CALENDARIO
+================================== */
+
+.filtros-resultados {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-bottom: 30px;
+}
+
+.grupo-filtro h3 {
+    color: var(--azul);
+    font-size: 14px;
+    margin: 0 0 12px;
+}
+
+.botones-categorias,
+.botones-equipos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* BOTONES DE CATEGORÍA Y EQUIPO */
+
+.boton-filtro,
+.boton-equipo {
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 800;
+    padding: 12px 20px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+    box-shadow: 0 3px 6px rgba(16, 43, 78, 0.10);
+}
+
+/* Alternancia de amarillo y azul */
+
+.boton-filtro:nth-child(odd),
+.boton-equipo:nth-child(odd) {
+    background: var(--amarillo);
+    color: var(--azul);
+    border-color: var(--amarillo);
+}
+
+.boton-filtro:nth-child(even),
+.boton-equipo:nth-child(even) {
+    background: var(--azul);
+    color: var(--blanco);
+    border-color: var(--azul);
+}
+
+/* Botones activos */
+
+.boton-filtro.activo,
+.boton-equipo.activo {
+    outline: 3px solid var(--amarillo);
+    outline-offset: 3px;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(16, 43, 78, 0.20);
+}
+
+.boton-equipo {
+    min-width: 105px;
+}
+
+/* Efectos de interacción */
+
+.boton-filtro:hover,
+.boton-equipo:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.08);
+    box-shadow: 0 7px 15px rgba(16, 43, 78, 0.22);
+}
+
+.boton-filtro:focus-visible,
+.boton-equipo:focus-visible {
+    outline: 3px solid #e39a00;
+    outline-offset: 5px;
+}
+
+/* RESUMEN DE SELECCIÓN */
+
+.resumen-seleccion {
+    padding: 20px 22px;
+    margin-bottom: 22px;
+    border-left: 4px solid var(--azul);
+    background: var(--fondo);
+    border-radius: 0 6px 6px 0;
+}
+
+.resumen-seleccion p {
+    margin: 0;
+}
+
+#titulo-seleccion {
+    color: var(--azul);
+    font-size: 20px;
+    font-weight: 800;
+}
+
+#subtitulo-seleccion {
+    color: var(--gris);
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+/* LISTA DE PARTIDOS */
+
+.lista-partidos {
+    display: grid;
+    gap: 14px;
+}
+
+.partido {
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    align-items: center;
+    gap: 20px;
+    padding: 22px;
+    border: 1px solid var(--gris-claro);
+    border-radius: 8px;
+    background: var(--blanco);
+}
+
+.partido-fecha {
+    color: var(--gris);
+    font-size: 12px;
+}
+
+.partido-equipos {
+    color: var(--azul);
+    font-weight: 700;
+}
+
+.partido-detalle {
+    color: var(--gris);
+    font-size: 12px;
+}
+
+.marcador {
+    color: var(--azul);
+    font-size: 22px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.estado-partido {
+    display: block;
+    color: var(--gris);
+    font-size: 11px;
+    font-weight: 500;
+    text-align: right;
+}
+
+.mensaje-sin-partidos {
+    padding: 25px;
+    border: 1px solid var(--gris-claro);
+    border-radius: 8px;
+    color: var(--gris);
+    text-align: center;
+    background: var(--blanco);
+}
+
+.nota {
+    color: var(--gris);
+    font-size: 12px;
+    margin-top: 25px;
+}
+
+/* ==================================
+   ACTUALIDAD Y NOTICIAS
+================================== */
+
+.noticia {
+    min-height: 245px;
+}
+
+.noticia h3 {
+    margin-top: 15px;
+}
+
+/* ==================================
+   CONTACTO
+================================== */
+
+.contacto-panel {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    padding: 35px;
+    border: 1px solid var(--gris-claro);
+    border-radius: 8px;
+}
+
+.contacto-panel p {
+    color: var(--gris);
+}
+
+.contacto-datos {
+    background: var(--fondo);
+    border-radius: 6px;
+    padding: 24px;
+}
+
+.contacto-datos h3 {
+    color: var(--azul);
+    margin-top: 0;
+}
+
+.contacto-datos p {
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--gris-claro);
+    overflow-wrap: anywhere;
+}
+
+/* ==================================
+   FRANJA FINAL
+================================== */
+
+.franja {
+    background: var(--azul);
+    color: var(--blanco);
+    text-align: center;
+    padding: 55px 20px;
+}
+
+.franja .etiqueta {
+    color: #bfcbd9;
+}
+
+.franja h2 {
+    font-size: clamp(27px, 4vw, 40px);
+    margin: 0 0 10px;
+}
+
+.franja > p:last-child {
+    color: #d4dce6;
+    margin-bottom: 0;
+}
+
+/* ==================================
+   PIE DE PÁGINA
+================================== */
+
+.pie {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 22px max(5%, calc((100% - var(--ancho)) / 2));
+    background: var(--blanco);
+    border-top: 1px solid var(--gris-claro);
+    color: var(--gris);
+    font-size: 12px;
+}
+
+.pie p {
+    margin: 0;
+}
+
+/* ==================================
+   TABLETAS
+================================== */
+
+@media (max-width: 850px) {
+    .cabecera {
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .navegacion {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 8px 0;
+    }
+
+    .navegacion.abierto {
+        display: flex;
+    }
+
+    .navegacion a {
+        width: 100%;
+        padding: 12px 0;
+    }
+
+    .navegacion a.activo {
+        border-bottom: 0;
+    }
+
+    .hero {
+        padding: 55px 7%;
+        gap: 25px;
+    }
+
+    .hero-decoracion {
+        flex-basis: 160px;
+        width: 160px;
+        height: 160px;
+    }
+
+    .hero-decoracion img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .rejilla.tarjetas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* ==================================
+   MÓVILES
+================================== */
+
+@media (max-width: 600px) {
+    .marca img {
+        width: 56px;
+        height: 50px;
+    }
+
+    .marca {
+        font-size: 13px;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        padding: 38px 6%;
+    }
+
+    .hero-decoracion {
+        align-self: center;
+        flex-basis: auto;
+        width: 130px;
+        height: 130px;
+    }
+
+    .hero-decoracion img {
+        width: 95px;
+        height: 95px;
+    }
+
+    .hero h1 {
+        font-size: 39px;
+        letter-spacing: -1px;
+    }
+
+    .seccion {
+        padding: 48px 18px;
+    }
+
+    .rejilla.tarjetas,
+    .trofeos {
+        grid-template-columns: 1fr;
+    }
+
+    .partido {
+        grid-template-columns: 1fr auto;
+        gap: 10px;
+        padding: 16px;
+    }
+
+    .partido-fecha {
+        grid-column: 1 / -1;
+    }
+
+    .marcador {
+        font-size: 19px;
+    }
+
+    .contacto-panel {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .pie {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+
+    .cabecera-pagina {
+        padding: 45px 18px;
+    }
+
+    .botones-categorias,
+    .botones-equipos {
+        gap: 8px;
+    }
+
+    .boton-filtro {
+        flex: 1 1 auto;
+        padding: 11px 13px;
+    }
+
+    .boton-equipo {
+        flex: 1;
+        min-width: 0;
+        padding: 12px 8px;
+    }
+}

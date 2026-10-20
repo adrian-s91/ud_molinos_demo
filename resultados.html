@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UD Los Molinos ZGZ | Resultados</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <script src="js/main.js" defer></script>
+    <script src="js/resultados.js" defer></script>
+</head>
+
+<body>
+    <header class="cabecera">
+        <a href="index.html" class="marca">
+            <img src="fotos/UDM.png" alt="Escudo UD Los Molinos">
+            <span>UD LOS MOLINOS</span>
+        </a>
+
+        <button class="menu-toggle"
+                aria-label="Abrir menú"
+                aria-expanded="false">☰</button>
+
+        <nav class="navegacion">
+            <a href="index.html">Inicio</a>
+            <a href="resultados.html" class="activo">Resultados</a>
+            <a href="palmares.html">Palmarés</a>
+            <a href="actualidad.html">Actualidad</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="cabecera-pagina">
+            <p class="etiqueta">COMPETICIÓN</p>
+            <h1>Resultados y partidos</h1>
+            <p>El seguimiento de nuestros encuentros.</p>
+        </section>
+
+        <section class="seccion contenido-limitado">
+            <div class="encabezado-seccion alineado-izquierda">
+                <h2>Calendario y marcadores</h2>
+                <p>
+                    Esta es una version de prueba en la que no se han añadido partidos reales
+                </p>
+            </div>
+
+            <div class="filtros-resultados">
+                <div class="grupo-filtro">
+                    <h3>Categoría</h3>
+
+                    <div id="botones-categorias" class="botones-categorias">
+                        <button type="button"
+                                class="boton-filtro activo"
+                                data-categoria="Regional"
+                                aria-pressed="true">
+                            Regional
+                        </button>
+
+                        <button type="button"
+                                class="boton-filtro"
+                                data-categoria="Juvenil"
+                                aria-pressed="false">
+                            Juvenil
+                        </button>
+
+                        <button type="button"
+                                class="boton-filtro"
+                                data-categoria="Cadete"
+                                aria-pressed="false">
+                            Cadete
+                        </button>
+
+                        <button type="button"
+                                class="boton-filtro"
+                                data-categoria="Infantil"
+                                aria-pressed="false">
+                            Infantil
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grupo-filtro">
+                    <h3>Equipo</h3>
+
+                    <div id="botones-equipos" class="botones-equipos">
+                        <button type="button"
+                                class="boton-equipo activo"
+                                data-equipo="A"
+                                aria-pressed="true">
+                            Equipo A
+                        </button>
+
+                        <button type="button"
+                                class="boton-equipo"
+                                data-equipo="B"
+                                aria-pressed="false">
+                            Equipo B
+                        </button>
+
+                        <button type="button"
+                                class="boton-equipo"
+                                data-equipo="C"
+                                aria-pressed="false">
+                            Equipo C
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resumen-seleccion">
+                <p id="titulo-seleccion">Regional · Equipo A</p>
+                <p id="subtitulo-seleccion">Calendario y resultados</p>
+            </div>
+
+            <div id="lista-partidos" class="lista-partidos">
+                <p>Cargando partidos...</p>
+            </div>
+
+            <p class="nota">
+                Los encuentros y marcadores deben actualizarse con
+                los datos reales del club.
+            </p>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <p>© <span class="anio-actual"></span> UD Los Molinos ZGZ</p>
+        <p>Pasión por el fútbol.</p>
+    </footer>
+</body>
+</html>
